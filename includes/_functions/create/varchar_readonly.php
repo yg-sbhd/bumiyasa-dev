@@ -1,0 +1,1 @@
+<input name="<?=$field_name_ori?>" type="text" value="" maxlength="<?=$field_size?>" class="form-control" <?=$required?> readonly>

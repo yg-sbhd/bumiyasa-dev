@@ -1,0 +1,201 @@
+<?php
+$show_site=cmsDB();
+$qry = "select * from master_group_location where group_location_id=2";
+
+$show_site->query($qry);
+
+$show_site->next();
+?>
+
+<div class="container-fluid">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-lg-6">
+        <i class="fa fa-desktop"></i> &nbsp; <h5 class="d-inline-block">Form Purchase Request</h5>
+      </div>
+      <div class="col-lg-6">
+        <ol class="breadcrumb pull-right mb-1">
+          <li class="breadcrumb-item active"><a href="<?=$www_url?>"><i data-feather="home"></i></a> &nbsp; / Purchase Request / Preview</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+    table > tbody > tr > td{
+        padding-right:5px;
+    }
+</style>
+<div style="overflow-x: auto;">
+<div class="A4">
+    <section class="sheet padding-10mm">
+        <table class="w-100">
+            <tr>
+                <td>
+                    <img src="<?=$ANOM_VARS["www_file_url"]?>upload_photo/<?=$show_site->row('image')?>">
+                </td>
+                <td class="p-3">
+                    <h3><b><?=$show_site->row("group_name")?></b></h3>
+                    <p><?=$show_site->row("group_address")?></p>
+                </td>
+            </tr>
+        </table>
+
+        <table class="w-100 mb-3">
+             <tr>
+                <td><h4 class="text-center"><b><u>Purchase Request</u></b></h4></td>
+            </tr>
+        </table>
+        <table class="w-100 mb-3">
+            <tr>
+                <td>
+                    <div class="row justify-content-between">
+                        <div class="col-6"> 
+                            <table>
+                                <tr>
+                                    <td>PR Number</td>
+                                    <td>:</td>
+                                    <td>(00/PR/III/LGW/2021)</td>        
+                                </tr>
+                                         
+                                <tr>
+                                    <td>PR Date</td>
+                                    <td>:</td>
+                                    <td>By system (Date)</td>
+                                </tr>
+
+                                 <tr>
+                                    <td>Subject</td>
+                                    <td>:</td>
+                                    <td>Procurement of …</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Component</td>
+                                    <td>:</td>
+                                    <td>Select from list</td>
+                                </tr>
+
+                                <tr>
+                                    <td>To</td>
+                                    <td>:</td>
+                                    <td>By system</td>
+                                </tr>
+                                <tr>
+                                     <td>Applicant</td>
+                                    <td>:</td>
+                                    <td>Select from list</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Delivery Date</td>
+                                    <td>:</td>
+                                    <td>Input date</td>
+                                </tr>
+                                                                  
+                            </table>
+                        </div>
+                        <div class="col-6"> 
+
+                            <table>
+                                <tr>
+                                    <td>LKPB Number</td>
+                                    <td>:</td>
+                                    <td>Select List LKPB Number</td>        
+                                </tr>
+                                <tr>
+                                    <td>LKPB Date</td>
+                                    <td>:</td>
+                                    <td>Call to Date LKPB</td>        
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                    <table>
+                                        <tr>
+                                            <td><b>SHIP To :</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Input Name</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Input Company</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Input addres</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Input phone number</td>
+                                        </tr>
+                                    </table>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="w-100 mb-3" style="text-align: center;" border="1">
+            <tr>
+                <th width="5%"><b>No</b></th>
+                <th width="35%"><b>Product Name</b></th>
+                <th width="20%"><b>Brand</b></th>
+                <th width="30%"><b>Specification</b></th>
+                <th width="10%"><b>Qty</b></th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>data-dummy</td>
+                <td>data-dummy</td>
+                <td>data-dummy</td>
+                <td>10</td>
+            </tr>
+        </table>
+        
+        <table class="w-100">
+             <tr>
+                <td><b>Approval</b></td>
+            </tr>
+        </table>
+
+        <table class="w-100" border="1">
+            <tr>
+                <td width="20%">
+                    <p class="text-center">Applicant</p>
+                    <div style="min-height: 50px;">
+                        <!-- GAMBAR TTD -->
+                    </div>
+                    <p class="text-center"><b>Call to name</b></p>
+                </td>
+                <td width="20%">
+                    <p class="text-center">Reviewed</p>
+                    <div style="min-height: 50px;">
+                        <!-- GAMBAR TTD -->
+
+                    </div>
+                    <p class="text-center"><b>call to komponen</b></p>
+                </td>
+                <td width="20%">
+                    <p class="text-center">Approved</p>
+                    <div style="min-height: 50px;">
+                        <!-- GAMBAR TTD -->
+                    </div>
+                    <p class="text-center"><b>Call to Aplicant</b></p>
+                </td>
+                <td>
+                    <p class="text-left ml-2">Catatan : </p>
+                    <div style="min-height: 50px;">
+                        <!-- catatannya -->
+                    </div>
+                    <p>&nbsp;</p>
+                </td>
+            </tr>
+            
+        </table>
+    </section>
+</div>

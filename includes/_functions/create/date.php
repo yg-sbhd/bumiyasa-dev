@@ -1,0 +1,1 @@
+<input name="<?=$field_name_ori?>" class="form-control form-control-inline input-medium date-picker"  size="10" type="text" value="<?=date("d/m/Y")?>"  <?=$required?>/>

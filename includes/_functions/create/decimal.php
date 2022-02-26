@@ -1,0 +1,1 @@
+<input name="<?=$field_name_ori?>" type="text" value="" maxlength="<?=$field_size?>" class="form-control number-format" placeholder="0.00" <?=$required?>>

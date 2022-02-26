@@ -1,0 +1,207 @@
+<?php
+$show_site=cmsDB();
+$qry = "select * from master_group_location where group_location_id=2";
+
+$show_site->query($qry);
+
+$show_site->next();
+?>
+<div class="container-fluid">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-lg-6">
+        <i class="fa fa-desktop"></i> &nbsp; <h5 class="d-inline-block">Form Request for Quotation</h5>
+      </div>
+      <div class="col-lg-6">
+        <ol class="breadcrumb pull-right mb-1">
+          <li class="breadcrumb-item active"><a href="<?=$www_url?>"><i data-feather="home"></i></a> &nbsp; / Request for Quotation / Preview</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+    table > tbody > tr > td{
+        padding-right:5px;
+    }
+</style>
+<div style="overflow-x: auto;">
+    <div class="A4">
+        <section class="sheet padding-10mm">
+            <table class="w-100">
+                <tr>
+                    <td>
+                        <img src="<?=$ANOM_VARS["www_file_url"]?>upload_photo/<?=$show_site->row('image')?>">
+                    </td>
+                    <td class="p-3">
+                        <h3><b><?=$show_site->row("group_name")?></b></h3>
+                        <p><?=$show_site->row("group_address")?></p>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="w-100 mb-3">
+                <tr>
+                    <td><h4 class="text-center"><b><u>Request for Quotation</u></b></h4></td>
+                </tr>
+            </table>
+            <table class="w-100">
+                <tr>
+                    <td>
+                        <div class="row justify-content-between">
+                            <div class="col-6"> 
+                                <table>
+                                    <tr>
+                                        <td>RFQ Number</td>
+                                        <td>:</td>
+                                        <td>(00/RFQ/III/LGW/2021)</td>        
+                                    </tr>
+                                            
+                                    <tr>
+                                        <td>RFQ Date</td>
+                                        <td>:</td>
+                                        <td>By system (Date)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Subject</td>
+                                        <td>:</td>
+                                        <td>Request for quotation</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="w-100 mb-3">
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-6">
+                                <table>
+                                    <tr>
+                                        <td><b>To :</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Name(input name or select to vendor)</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Company(input company or select to vendor)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address(input company or select to vendor)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone Number(input company or select to vendor)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table>
+                                    <tr>
+                                        <td><b>SHIP To :</b></td>
+                                    </tr>
+                                    <tr?>
+                                        <td><b>Name (Call to name at RCD-FIN-01)</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Company (Call to Company at RCD-FIN-01)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address (Call to Address at RCD-FIN-01)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone (Call to phone number at RCD-FIN-01)</td>
+                                    </tr>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="w-100 mb-3" border="1">
+                <tr>
+                    <th style="text-align: center;">Reference</th>
+                    <th style="text-align: center;">Delivery Date</th>
+                    <th style="text-align: center;">Term of Payment</th>
+                    <th style="text-align: center;">Currency</th>
+                </tr>
+                <tr>
+                    <td>Select list PR Number</td>
+                    <td>Call to Delivery Date at RCD-FIN-01</td>
+                    <td>Select Term of Payment List</td>
+                    <td>Select Currency List</td>
+                </tr>
+            </table>
+            <table class="w-100 mb-3" border="1" style=>
+                <tr>
+                    <th width="5%" style="text-align: center;">No</th>
+                    <th width="30%" style="text-align: center;">Product Name</th>
+                    <th width="25%" style="text-align: center;">Brand</th>
+                    <th width="30%"style="text-align: center;">Specification</th>
+                    <th width="10%"style="text-align: center;">Qty</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">1</td>
+                    <td>call to Product Name at RCD-FIN-01</td>
+                    <td>Call to Delivery Date at RCD-FIN-01</td>
+                    <td>Call to Spesification at RCD-FIN-01</td>
+                    <td>Call to Qty at RCD-FIN-01</td>
+                </tr>
+            </table>
+            <table class="w-100 mb-3">
+                <tr>
+                    <td>
+                        <b>Question and Submission</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Further questions / clarifications can be sent to the Contact Person below:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="container">
+                            <table>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Input PIC</td>
+                                </tr>
+                                <tr>
+                                    <td>Telp Number</td>
+                                    <td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Call to Name</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+                                    <td>Call to Name</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Bidding Documents can be submitted no later than: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Input day, date)
+                    </td>
+                </tr>
+            </table>
+            <table class="w-100">
+                <tr>
+                    <td>
+                        Best Regards,
+                        <p><b>Company Name call to Applicant at RCD-FIN-01</b></p>
+                        <div style="min-height: 50px;">
+                        <!-- GAMBAR TTD -->
+                        </div>
+                        <p style="margin:auto !important;">Name call to "to" at RCD-FIN-01</p>
+                        <p style="margin:auto !important;">Position call to "to" at RCD-FIN-01></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
