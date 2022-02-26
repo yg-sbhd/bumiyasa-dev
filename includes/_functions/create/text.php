@@ -1,0 +1,1 @@
+<textarea name="<?=$field_name_ori?>" rows="<?=$field_row?>" class="form-control"  <?=$required?>></textarea>

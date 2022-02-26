@@ -1,0 +1,1 @@
+<input name="<?=$field_name_ori?>" type="FILE" value="" size="<?=$field_size?>" maxlength="<?=$field_size?>" class="form-control" <?=$required?>  accept="image/*;capture=camera;">
