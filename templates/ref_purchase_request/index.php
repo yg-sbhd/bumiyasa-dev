@@ -152,12 +152,13 @@ $primary_id_child = "purchase_request_detail_id";
 $field_name_child = "product_name,";
 $field_name_child = $field_name_child . "brand,";
 $field_name_child = $field_name_child . "spesification,";
+$field_name_child = $field_name_child . "unit_qty_id,";
 $field_name_child = $field_name_child . "qty";
 		   
 $field_type_child = "product_name|text|50^2|Product Name";
 $field_type_child = $field_type_child . "#brand|text|50^2|Brand";
 $field_type_child = $field_type_child . "#spesification|text|50^3|Spesification";
-$field_type_child = $field_type_child . "#qty|select|select unit_qty_id as id, name as name from master_unit_qty where is_deleted=0^2|Unit";
+$field_type_child = $field_type_child . "#unit_qty_id|select|select unit_qty_id as id, name as name from master_unit_qty where is_deleted=0^2|Unit";
 $field_type_child = $field_type_child . "#qty|text|50^2|Qty";
 
 $field_child_require = "product_name,brand,spesification,qty";
@@ -165,7 +166,7 @@ $field_child_require = "product_name,brand,spesification,qty";
 $record_show_child = "product_name|Product Name|left|sort_off|sub_query_off~";
 $record_show_child = $record_show_child . "brand|Brand|left|sort_off|sub_query_off~";
 $record_show_child = $record_show_child . "spesification|Spesification|left|sort_off|sub_query_off~";
-$record_show_child = $record_show_child . "unit_qty_id|Unit|left|sort_off|sub_query_off~";
+$record_show_child = $record_show_child . "unit_qty_id|Unit|left|sort_off|select unit_qty_id as id, name as name from master_unit_qty where is_deleted=0~";
 $record_show_child = $record_show_child . "qty|Qty|left|sort_off|sub_query_off~";
 
 //penjumlahan (SUM) utk recordlist

@@ -200,7 +200,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?while ($detail->next()) {?>
 				<?if($detail->row('component_item') == 1){?>
 				<tr>
-					<th colspan="2">
+					<th colspan="3">
 						Description
 						<input type="hidden" name="component[0]" value="Description">
 						<input type="hidden" name="component_item[0]" value="1">
@@ -236,7 +236,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?}?>
 				<?if($detail->row('component_item') == 2){?>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						RFQ Number
 						<input type="hidden" name="component[1]" value="RFQ Number">
 						<input type="hidden" name="component_item[1]" value="2">
@@ -282,7 +282,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?}?>
 				<?if($detail->row('component_item') == 3){?>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						Quotation Number
 						<input type="hidden" name="component[2]" value="Quotation Number">
 						<input type="hidden" name="component_item[2]" value="3">
@@ -300,7 +300,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?if($detail->row('component_item') == 4){?>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						Quotation Date
 						<input type="hidden" name="component[3]" value="Quotation Date">
 						<input type="hidden" name="component_item[3]" value="4">
@@ -313,6 +313,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<tr style="background: #efefef;">
 					<td>Breakdown price at cost structure</td>
 					<td align="center">Qty</td>
+					<td align="center">Unit</td>
 
 					<td align="center">Unit Price</td>
 					<td align="center">Amount</td>
@@ -338,6 +339,8 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 
 							</td>
 							<td><input type="text" name="qty[<?=$no?>]" value="<?=number_format($detail_5->row('qty'), 2)?>" class="w-100 text-right"></td>
+							
+							<td><input type="text" name="unit_qty_id[<?=$no?>]" value="<?=$show->row('unit_qty_id')?>" class="w-100"></td>
 
 							<td><input type="text" name="vendor1_price[<?=$no?>]" value="<?=number_format($detail_5->row('vendor1_price'), 2)?>" class="w-100 text-right"></td>
 							<td><input type="text" name="vendor1_amount[<?=$no?>]" value="<?=number_format($detail_5->row('vendor1_amount'), 2)?>" class="w-100 text-right"></td>
@@ -382,14 +385,14 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?if($detail->row('component_item') == 6){?>
 
 				<tr style="background: #efefef;">
-					<td colspan="2">Other's Factor</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
+					<td colspan="3">Other's Factor</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
 				</tr>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						1. Term of Payment
 						<input type="hidden" name="component[<?=$no+2?>]" value="1. Term of Payment">
 						<input type="hidden" name="component_item[5]" value="6">
@@ -411,7 +414,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?}?>
 				<?if($detail->row('component_item') == 7){?>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						2. Delivery Date
 						<input type="hidden" name="component[<?=$no+3?>]" value="2. Delivery Date">
 						<input type="hidden" name="component_item[6]" value="7">
@@ -424,10 +427,10 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 
 
 				<tr style="background: #efefef;">
-					<td colspan="2">Scoring</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
+					<td colspan="3">Scoring</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
 
 				</tr>
 				<?}?>
@@ -435,7 +438,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						1. Price
 						<input type="hidden" name="component[<?=$no+4?>]" value="1. Price">
 						<input type="hidden" name="component_item[7]" value="8">
@@ -449,7 +452,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?if($detail->row('component_item') == 9){?>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						2. Technical
 						<input type="hidden" name="component[<?=$no+5?>]" value="2. Technical">
 						<input type="hidden" name="component_item[8]" value="9">
@@ -463,7 +466,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?if($detail->row('component_item') == 10){?>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						3. Other
 						<input type="hidden" name="component[<?=$no+6?>]" value="3. Other">
 						<input type="hidden" name="component_item[9]" value="10">
@@ -477,7 +480,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				<?if($detail->row('component_item') == 11){?>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						Total Score
 						<input type="hidden" name="component[<?=$no+7?>]" value="Total Score">
 						<input type="hidden" name="component_item[10]" value="11">

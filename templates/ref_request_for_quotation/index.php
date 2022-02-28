@@ -26,6 +26,18 @@ function opt_deleteqry($id){
 	$qry=cmsDB();
 
 }
+$qry = cmsDB();
+$qry2 = cmsDB();
+$qry_form_select = '';
+// if($sesi_position == 'ADMIN'){
+// 	$query = "select * from ref_lkpb where is_deleted=0 and status_id not in (0) or insert_by=".$sesi_user_id;
+// 	$qry_group_location_id = "";
+// }else{
+// 	$qry->query("select show_lst_lkpb from ref_group where is_deleted=0 and group_id=".$sesi_group_id);
+// 	$qry->query("select user_id from ref_user where group_id in (".$qry->valueList('show_lst_lkpb').")");
+
+// 	$qry_group_location_id = " and group_location_id in (".$sesi_group_location_id.")";
+// }
 
 
 
@@ -44,6 +56,7 @@ $form_new_title = "Form Add Request For Quotation";
 $form_edit_title = "Form Edit Request For Quotation";
 
 $field_name = "request_for_quotation_no,";
+$field_name = $field_name . "group_location_id,";
 $field_name = $field_name . "purchase_request_id,";
 $field_name = $field_name . "date,";
 $field_name = $field_name . "vendor_id,";
@@ -58,6 +71,7 @@ $field_name = $field_name . "notes";
 
 $field_alias_name = "Request For Quotation Number,";
 $field_alias_name = $field_alias_name . "Purchase Request Number,";
+$field_alias_name = $field_alias_name . "Purchase Request Number,";
 $field_alias_name = $field_alias_name . "Request For Quotation Date,";
 $field_alias_name = $field_alias_name . "Vendor,";
 $field_alias_name = $field_alias_name . "Payment Type,";
@@ -70,10 +84,13 @@ $field_alias_name = $field_alias_name . "Bidding Document Date,";
 $field_alias_name = $field_alias_name . "Note";
 
 
-$field_required = "purchase_request_id,date,vendor_id,rfq_payment_id,rfq_currency_id,user_id,document_date";
+$field_required = "purchase_request_id,date,vendor_id,rfq_payment_id,rfq_currency_id,document_date";
 
 
 $field_type_name = "request_for_quotation_no|text-readonly|50^0";
+$field_type_name = $field_type_name . "#group_location_id|select|select group_location_id as id, CONCAT(group_name_alias, ' (',group_name,')') as name from master_group_location where is_deleted=0 and group_location_id<>0".$qry_group_location_id."^0";
+
+
 $field_type_name = $field_type_name . "#purchase_request_id|select|select purchase_request_id as id, purchase_request_no as name from ref_purchase_request where is_deleted=0^0";
 
 $field_type_name = $field_type_name . "#date|date|50^0";
@@ -105,8 +122,8 @@ $relational_txt = $relational_txt . "status_id|status_id|select|select status_id
 
 
 $record_show = "request_for_quotation_no|PR No|left|sort_on|link_on|sub_query_off~";
-$record_show = $record_show. "group_location_id_txt|Company|left|sort_on|link_on|sub_query_off~";
-$record_show = $record_show. "purchase_request_no|PR Ref|left|sort_on|link_on|sub_query_off~";
+$record_show = $record_show. "vendor_id_txt|Company|left|sort_on|link_on|sub_query_off~";
+$record_show = $record_show. "purchase_request_id_txt|PR Ref|left|sort_on|link_on|sub_query_off~";
 $record_show = $record_show . "update_date|Last Update|center|sort_on|link_on|datetime~";
 $record_show = $record_show . "update_by_txt|Update By|center|sort_on|link_off|sub_query_off~";
 

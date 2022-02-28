@@ -174,7 +174,7 @@ if(isset($_GET['submit'])){
 
 			<table border="1">
 				<tr>
-					<th colspan="2">
+					<th colspan="3">
 						Description
 						<input type="hidden" name="component[0]" value="Description">
 						<input type="hidden" name="component_item[0]" value="1">
@@ -208,7 +208,7 @@ if(isset($_GET['submit'])){
 					</th>
 				</tr>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						RFQ Number
 						<input type="hidden" name="component[1]" value="RFQ Number">
 						<input type="hidden" name="component_item[1]" value="2">
@@ -235,7 +235,7 @@ if(isset($_GET['submit'])){
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						Quotation Number
 						<input type="hidden" name="component[2]" value="Quotation Number">
 						<input type="hidden" name="component_item[2]" value="3">
@@ -250,7 +250,7 @@ if(isset($_GET['submit'])){
 					<td colspan="2"><input type="text" name="vendor3[2]"></td> -->
 				</tr>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						Quotation Date
 						<input type="hidden" name="component[3]" value="Quotation Date">
 						<input type="hidden" name="component_item[3]" value="4">
@@ -263,6 +263,7 @@ if(isset($_GET['submit'])){
 				<tr style="background: #efefef;">
 					<td>Breakdown price at cost structure</td>
 					<td align="center">Qty</td>
+					<td align="center">Unit</td>
 
 					<td align="center">Unit Price</td>
 					<td align="center">Amount</td>
@@ -281,12 +282,13 @@ if(isset($_GET['submit'])){
 				$no = 4;
 				while ($show->next()) {?>
 					<tr>
-						<td width="28%">
+						<td width="28%" >
 							<input type="text" name="component[<?=$no?>]" value="<?=$show->row('product_name')?> | <?=$show->row('brand')?> | <?=$show->row('spesification')?>" class="w-100">
 							<input type="hidden" name="component_item[4]" value="5">
 
 						</td>
-						<td><input type="text" name="qty[<?=$no?>]" value="<?=$show->row('qty')?>" class="w-100"></td>
+						<td ><input type="text" name="qty[<?=$no?>]" value="<?=$show->row('qty')?>" class="w-100"></td>
+						<td><input type="text" name="unit_qty_id[<?=$no?>]" value="<?=$show->row('unit_qty_id')?>" class="w-100"></td>
 
 						<td><input type="text" name="vendor1_price[<?=$no?>]" class="w-100"></td>
 						<td><input type="text" name="vendor1_amount[<?=$no?>]" class="w-100"></td>
@@ -327,30 +329,30 @@ if(isset($_GET['submit'])){
 				</tr>
 
 				<tr style="background: #efefef;">
-					<td colspan="2">Other's Factor</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
+					<td colspan="3">Other's Factor</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
 				</tr>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						1. Term of Payment
 						<input type="hidden" name="component[<?=$no+2?>]" value="1. Term of Payment">
 						<input type="hidden" name="component_item[5]" value="6">
 
 					</td>
-					<td colspan="2">
+					<td colspan="3">
 						<? add_select_ba("vendor1", "select name as name, rfq_payment_id as id from master_rfq_payment where is_deleted=0", $no+2, "required");?>
 
 						<!-- <input type="text" name="vendor1[<?=$no+2?>]" class="w-100"> -->
 					</td>
-					<td colspan="2">
+					<td colspan="3">
 						<!-- <input type="text" name="vendor2[<?=$no+2?>]" class="w-100"> -->
 						<? add_select_ba("vendor2", "select name as name, rfq_payment_id as id from master_rfq_payment where is_deleted=0", $no+2, "required");?>
 
 					</td>
-					<td colspan="2">
+					<td colspan="3">
 						<!-- <input type="text" name="vendor3[<?=$no+2?>]" class="w-100"> -->
 						<? add_select_ba("vendor3", "select name as name, rfq_payment_id as id from master_rfq_payment where is_deleted=0", $no+2, "required");?>
 
@@ -358,71 +360,71 @@ if(isset($_GET['submit'])){
 				</tr>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						2. Delivery Date
 						<input type="hidden" name="component[<?=$no+3?>]" value="2. Delivery Date">
 						<input type="hidden" name="component_item[6]" value="7">
 
 					</td>
-					<td colspan="2"><input type="text" name="vendor1[<?=$no+3?>]" class="datepicker-here digits w-100"></td>
-					<td colspan="2"><input type="text" name="vendor2[<?=$no+3?>]" class="datepicker-here digits w-100"></td>
-					<td colspan="2"><input type="text" name="vendor3[<?=$no+3?>]" class="datepicker-here digits w-100"></td>
+					<td colspan="3"><input type="text" name="vendor1[<?=$no+3?>]" class="datepicker-here digits w-100"></td>
+					<td colspan="3"><input type="text" name="vendor2[<?=$no+3?>]" class="datepicker-here digits w-100"></td>
+					<td colspan="3"><input type="text" name="vendor3[<?=$no+3?>]" class="datepicker-here digits w-100"></td>
 				</tr>
 
 
 				<tr style="background: #efefef;">
-					<td colspan="2">Scoring</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
-					<td colspan="2">&nbsp;</td>
+					<td colspan="3">Scoring</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
+					<td colspan="3">&nbsp;</td>
 
 				</tr>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						1. Price
 						<input type="hidden" name="component[<?=$no+4?>]" value="1. Price">
 						<input type="hidden" name="component_item[7]" value="8">
 
 					</td>
-					<td colspan="2"><input type="text" name="vendor1[<?=$no+4?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor2[<?=$no+4?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor3[<?=$no+4?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor1[<?=$no+4?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor2[<?=$no+4?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor3[<?=$no+4?>]" class="w-100"></td>
 				</tr>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						2. Technical
 						<input type="hidden" name="component[<?=$no+5?>]" value="2. Technical">
 						<input type="hidden" name="component_item[8]" value="9">
 
 					</td>
-					<td colspan="2"><input type="text" name="vendor1[<?=$no+5?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor2[<?=$no+5?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor3[<?=$no+5?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor1[<?=$no+5?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor2[<?=$no+5?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor3[<?=$no+5?>]" class="w-100"></td>
 				</tr>
 
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						3. Other
 						<input type="hidden" name="component[<?=$no+6?>]" value="3. Other">
 						<input type="hidden" name="component_item[9]" value="10">
 
 					</td>
-					<td colspan="2"><input type="text" name="vendor1[<?=$no+6?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor2[<?=$no+6?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor3[<?=$no+6?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor1[<?=$no+6?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor2[<?=$no+6?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor3[<?=$no+6?>]" class="w-100"></td>
 				</tr>
 				<tr>
-					<td colspan="2">
+					<td colspan="3">
 						Total Score
 						<input type="hidden" name="component[<?=$no+7?>]" value="Total Score">
 						<input type="hidden" name="component_item[10]" value="11">
 
 					</td>
-					<td colspan="2"><input type="text" name="vendor1[<?=$no+7?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor2[<?=$no+7?>]" class="w-100"></td>
-					<td colspan="2"><input type="text" name="vendor3[<?=$no+7?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor1[<?=$no+7?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor2[<?=$no+7?>]" class="w-100"></td>
+					<td colspan="3"><input type="text" name="vendor3[<?=$no+7?>]" class="w-100"></td>
 				</tr>
 			</table>
 

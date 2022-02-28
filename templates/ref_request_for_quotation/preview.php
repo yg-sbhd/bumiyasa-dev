@@ -156,9 +156,11 @@ $user->next();
                     <th width="30%" style="text-align: center;">Product Name</th>
                     <th width="25%" style="text-align: center;">Brand</th>
                     <th width="30%"style="text-align: center;">Specification</th>
+                    <th width="15%"style="text-align: center;">Unit</th>
                     <th width="10%"style="text-align: center;">Qty</th>
                 </tr>
                 <?
+
                 $detail->query("select * from ref_purchase_request_detail where is_deleted=0 and purchase_request_id=".$pr->row('purchase_request_id'));
                 if ($detail->recordCount()) {
                     $no=1;
@@ -168,6 +170,10 @@ $user->next();
                             <td align="left"><?=$detail->row('product_name')?></td>
                             <td align="left"><?=$detail->row('brand')?></td>
                             <td align="left"><?=$detail->row('spesification')?></td>
+                            <td align="left"><?=
+                            get_from_db('master_unit_qty', 'name', 'unit_qty_id', $detail->row('unit_qty_id'))?>
+                            </td>
+                            
                             <td align="right"><?=$detail->row('qty')?></td>
                         </tr> 
                     <?
@@ -215,7 +221,7 @@ $user->next();
                 </tr>
                 <tr>
                     <td>
-                        Bidding Documents can be submitted no later than : <?=getDayIndonesia(Date2SQLnoTime($show->row('document_date')))?>, <?=datesql2date($show->row('document_date'))?> 
+                        Bidding Documents can be submitted no later than : <?=getDayIndonesia($show->row('document_date'))?>, <?=datesql2date($show->row('document_date'))?> 
                     </td>
                 </tr>
             </table>
@@ -230,6 +236,7 @@ $user->next();
                         </div>
                         <p style="margin:auto !important;"><?=$user->row('full_name')?></p>
                         <!-- <p style="margin:auto !important;"><?=$user->row('group_location_id')?></p> -->
+                        
                     </td>
                 </tr>
             </table>
@@ -237,6 +244,10 @@ $user->next();
     </div>
     <div class="form-group text-center">
         <button onclick="printDiv('printArea')" type="button" class="btn btn-success"><i class="fa fa-print"></i> Print this page</button>
+         <a class="btn btn-primary" data-toggle="modal" href="#btn-100"><i class="fa fa-check"></i> Submit</a>
+        <div id="btn-100" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+          <?approval_lkpb('lkpb_id', 100, 'Approve LKPB', $created_user_id);?>
+        </div>
         <button type="button" class="btn btn-light" onclick="history.back()">Back</button>
 
     </div>
