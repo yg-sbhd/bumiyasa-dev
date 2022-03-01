@@ -110,7 +110,7 @@ $field_type_name = $field_type_name . "#notes|textarea|50^0";
 
 
 $search_field = "";
-
+ 
 $relational_txt = "update_by|user_id|select|select full_name as name, user_id as id from ref_user~";
 // $relational_txt = $relational_txt . "group_location_id|group_location_id|select|select group_name_alias as name, group_location_id as id from master_group_location~";
 $relational_txt = $relational_txt . "purchase_request_id|purchase_request_id|select|select purchase_request_id as id, purchase_request_no as name from ref_purchase_request where is_deleted=0~";

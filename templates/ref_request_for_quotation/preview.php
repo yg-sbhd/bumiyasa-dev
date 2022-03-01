@@ -143,7 +143,7 @@ $user->next();
                     <th style="text-align: center;">Term of Payment</th>
                     <th style="text-align: center;">Currency</th>
                 </tr>
-                <tr>
+                <tr> 
                     <td align="center"><?=$pr->row('purchase_request_no')?></td>
                     <td align="center"><?=datesql2date($pr->row('date'))?></td>
                     <td align="center"><?=get_from_db('master_rfq_payment', 'name', 'rfq_payment_id', $show->row('rfq_payment_id'))?></td>

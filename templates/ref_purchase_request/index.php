@@ -102,7 +102,7 @@ $field_alias_name = $field_alias_name . "Note";
 
 $field_required = "group_location_id,pr_subject_id,pr_component_id,pr_applicant_id,delivery_date,ship_to_name";
 
-
+ 
 $field_type_name = "purchase_request_no|text-readonly|50^0";
 $field_type_name = $field_type_name . "#date|text-readonly|50^0";
 

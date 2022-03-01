@@ -326,7 +326,7 @@ if(isset($_GET['submit'])){
 
 					<td><input type="text" name="estimate_price[<?=$no?>]" class="w-100"></td>
 					<td><input type="text" name="estimate_amount[<?=$no?>]" class="w-100"></td>
-				</tr>
+				</tr> 
 
 				<tr style="background: #efefef;">
 					<td colspan="3">Other's Factor</td>

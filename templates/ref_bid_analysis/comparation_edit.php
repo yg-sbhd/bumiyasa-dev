@@ -298,7 +298,7 @@ $detail_5->query("select * from ref_bid_analys_detail where is_deleted=0 and com
 				</tr>
 				<?}?>
 				<?if($detail->row('component_item') == 4){?>
-
+ 
 				<tr>
 					<td colspan="3">
 						Quotation Date
